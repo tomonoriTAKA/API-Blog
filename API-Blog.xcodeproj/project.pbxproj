@@ -10,10 +10,16 @@
 		D21B6239E4A5885B929B5AAD /* Pods_API_Blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAD303EB7FD1FFBD4605C1F /* Pods_API_Blog.framework */; };
 		D2E27B01290DC1D100010FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B00290DC1D100010FCC /* AppDelegate.swift */; };
 		D2E27B03290DC1D100010FCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B02290DC1D100010FCC /* SceneDelegate.swift */; };
-		D2E27B05290DC1D100010FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B04290DC1D100010FCC /* ViewController.swift */; };
+		D2E27B05290DC1D100010FCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B04290DC1D100010FCC /* LoginViewController.swift */; };
 		D2E27B08290DC1D100010FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E27B06290DC1D100010FCC /* Main.storyboard */; };
 		D2E27B0A290DC1D400010FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E27B09290DC1D400010FCC /* Assets.xcassets */; };
 		D2E27B0D290DC1D400010FCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E27B0B290DC1D400010FCC /* LaunchScreen.storyboard */; };
+		D2E27B2229102D5400010FCC /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2129102D5400010FCC /* IndexViewController.swift */; };
+		D2E27B2429102D7000010FCC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2329102D7000010FCC /* DetailViewController.swift */; };
+		D2E27B2629102DB400010FCC /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2529102DB400010FCC /* CreateViewController.swift */; };
+		D2E27B2829102DD500010FCC /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2729102DD500010FCC /* EditViewController.swift */; };
+		D2E27B2A29102E9700010FCC /* CreateCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2929102E9700010FCC /* CreateCommentViewController.swift */; };
+		D2E27B2C29102EB900010FCC /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2B29102EB900010FCC /* EditCommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +28,19 @@
 		D2E27AFD290DC1D100010FCC /* API-Blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-Blog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E27B00290DC1D100010FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2E27B02290DC1D100010FCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D2E27B04290DC1D100010FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2E27B04290DC1D100010FCC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D2E27B07290DC1D100010FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2E27B09290DC1D400010FCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2E27B0C290DC1D400010FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2E27B0E290DC1D400010FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2E27B17290DD94000010FCC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D2E27B1F29102B0100010FCC /* StoryboardPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardPreviewWrapper.swift; sourceTree = "<group>"; };
+		D2E27B2129102D5400010FCC /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		D2E27B2329102D7000010FCC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D2E27B2529102DB400010FCC /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		D2E27B2729102DD500010FCC /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		D2E27B2929102E9700010FCC /* CreateCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommentViewController.swift; sourceTree = "<group>"; };
+		D2E27B2B29102EB900010FCC /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
 		E99451DF6E645A022CE6B67B /* Pods-API-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API-Blog.release.xcconfig"; path = "Target Support Files/Pods-API-Blog/Pods-API-Blog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +94,7 @@
 		D2E27AFF290DC1D100010FCC /* API-Blog */ = {
 			isa = PBXGroup;
 			children = (
+				D2E27B1E29102ADF00010FCC /* Wrappers */,
 				D2E27B00290DC1D100010FCC /* AppDelegate.swift */,
 				D2E27B02290DC1D100010FCC /* SceneDelegate.swift */,
 				D2E27B16290DC3A200010FCC /* Storyboards */,
@@ -103,7 +117,13 @@
 		D2E27B15290DC39100010FCC /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				D2E27B04290DC1D100010FCC /* ViewController.swift */,
+				D2E27B04290DC1D100010FCC /* LoginViewController.swift */,
+				D2E27B2129102D5400010FCC /* IndexViewController.swift */,
+				D2E27B2329102D7000010FCC /* DetailViewController.swift */,
+				D2E27B2529102DB400010FCC /* CreateViewController.swift */,
+				D2E27B2729102DD500010FCC /* EditViewController.swift */,
+				D2E27B2929102E9700010FCC /* CreateCommentViewController.swift */,
+				D2E27B2B29102EB900010FCC /* EditCommentViewController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -115,6 +135,14 @@
 				D2E27B0B290DC1D400010FCC /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D2E27B1E29102ADF00010FCC /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				D2E27B1F29102B0100010FCC /* StoryboardPreviewWrapper.swift */,
+			);
+			path = Wrappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +260,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2E27B05290DC1D100010FCC /* ViewController.swift in Sources */,
+				D2E27B05290DC1D100010FCC /* LoginViewController.swift in Sources */,
 				D2E27B01290DC1D100010FCC /* AppDelegate.swift in Sources */,
+				D2E27B2C29102EB900010FCC /* EditCommentViewController.swift in Sources */,
+				D2E27B2629102DB400010FCC /* CreateViewController.swift in Sources */,
+				D2E27B2429102D7000010FCC /* DetailViewController.swift in Sources */,
 				D2E27B03290DC1D100010FCC /* SceneDelegate.swift in Sources */,
+				D2E27B2229102D5400010FCC /* IndexViewController.swift in Sources */,
+				D2E27B2A29102E9700010FCC /* CreateCommentViewController.swift in Sources */,
+				D2E27B2829102DD500010FCC /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
