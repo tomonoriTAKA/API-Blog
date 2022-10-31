@@ -5,10 +5,13 @@ struct StoryboardPreviewWrapper:UIViewControllerRepresentable {
     
     let previewStoryboard:String = "Main"
     let previewId:String
+    var setValue:(UIViewController)->Void = {_ in }
+
     
     func makeUIViewController(context: Context) -> UIViewController {
         let storyboard = UIStoryboard(name: self.previewStoryboard, bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(identifier: self.previewId)
+        self.setValue(controller)
         return controller
     }
     

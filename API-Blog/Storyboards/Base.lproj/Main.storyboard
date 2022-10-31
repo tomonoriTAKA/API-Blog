@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DU1-c2-eaK">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -26,7 +26,7 @@
         <!--Index-->
         <scene sceneID="vNC-vw-GEa">
             <objects>
-                <viewController id="Ld1-53-fEO" userLabel="Index" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Index" id="Ld1-53-fEO" userLabel="Index" customClass="IndexViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CCj-gF-hH3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1258.4000000000001" y="-60.719640179910051"/>
         </scene>
-        <!--Show-->
+        <!--Detail-->
         <scene sceneID="PQg-1k-99q">
             <objects>
-                <viewController id="QD8-iE-QxK" userLabel="Show" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" id="QD8-iE-QxK" userLabel="Detail" customClass="DetailViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VNh-6m-vAr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
         <!--Create-->
         <scene sceneID="lYK-JJ-DIF">
             <objects>
-                <viewController id="g4T-xB-gmQ" userLabel="Create" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Create" id="g4T-xB-gmQ" userLabel="Create" customClass="CreateViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWx-tI-lBu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
         <!--Edit-->
         <scene sceneID="VwA-lQ-xf5">
             <objects>
-                <viewController id="xi0-xm-8g9" userLabel="Edit" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Edit" id="xi0-xm-8g9" userLabel="Edit" customClass="EditViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9u-NX-3fP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="1151" y="653"/>
         </scene>
-        <!--Comment Create-->
+        <!--Create Comment View Controller-->
         <scene sceneID="gFp-us-cOA">
             <objects>
-                <viewController id="bDz-Vi-3Tu" userLabel="Comment Create" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateComment" id="bDz-Vi-3Tu" customClass="CreateCommentViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tqb-aC-d3h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="3004" y="-585.1574212893554"/>
         </scene>
-        <!--Comment Edit-->
+        <!--Edit Comment View Controller-->
         <scene sceneID="DXZ-uL-Bbl">
             <objects>
-                <viewController id="x4e-ef-Kq2" userLabel="Comment Edit" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditComment" id="x4e-ef-Kq2" customClass="EditCommentViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rLO-Qt-4or">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
