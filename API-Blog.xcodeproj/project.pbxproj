@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D21B6239E4A5885B929B5AAD /* Pods_API_Blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAD303EB7FD1FFBD4605C1F /* Pods_API_Blog.framework */; };
+		D2C85D3E2912D460000AD3B0 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C85D3D2912D460000AD3B0 /* Article.swift */; };
+		D2C85D402912D5E7000AD3B0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C85D3F2912D5E7000AD3B0 /* Comment.swift */; };
+		D2C85D422912DDCF000AD3B0 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C85D412912DDCF000AD3B0 /* Index.swift */; };
+		D2C85D442912EAE0000AD3B0 /* LoadToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C85D432912EAE0000AD3B0 /* LoadToken.swift */; };
+		D2C85D482912F1E7000AD3B0 /* GetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C85D472912F1E7000AD3B0 /* GetToken.swift */; };
+		D2C85D4A2913C1B5000AD3B0 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C85D492913C1B5000AD3B0 /* CommentTableViewCell.swift */; };
 		D2E27B01290DC1D100010FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B00290DC1D100010FCC /* AppDelegate.swift */; };
 		D2E27B03290DC1D100010FCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B02290DC1D100010FCC /* SceneDelegate.swift */; };
 		D2E27B05290DC1D100010FCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B04290DC1D100010FCC /* LoginViewController.swift */; };
-		D2E27B08290DC1D100010FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E27B06290DC1D100010FCC /* Main.storyboard */; };
 		D2E27B0A290DC1D400010FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E27B09290DC1D400010FCC /* Assets.xcassets */; };
 		D2E27B0D290DC1D400010FCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E27B0B290DC1D400010FCC /* LaunchScreen.storyboard */; };
 		D2E27B2229102D5400010FCC /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2129102D5400010FCC /* IndexViewController.swift */; };
@@ -20,11 +25,20 @@
 		D2E27B2829102DD500010FCC /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2729102DD500010FCC /* EditViewController.swift */; };
 		D2E27B2A29102E9700010FCC /* CreateCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2929102E9700010FCC /* CreateCommentViewController.swift */; };
 		D2E27B2C29102EB900010FCC /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2B29102EB900010FCC /* EditCommentViewController.swift */; };
+		D2E27B3029103AB600010FCC /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B2F29103AB600010FCC /* ArticleTableViewCell.swift */; };
+		D2E27B332910442400010FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E27B06290DC1D100010FCC /* Main.storyboard */; };
+		D2E27B3529104DA700010FCC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E27B3429104DA700010FCC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		42743584500AD7967EAD0F4D /* Pods-API-Blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API-Blog.debug.xcconfig"; path = "Target Support Files/Pods-API-Blog/Pods-API-Blog.debug.xcconfig"; sourceTree = "<group>"; };
 		7BAD303EB7FD1FFBD4605C1F /* Pods_API_Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_API_Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2C85D3D2912D460000AD3B0 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		D2C85D3F2912D5E7000AD3B0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		D2C85D412912DDCF000AD3B0 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		D2C85D432912EAE0000AD3B0 /* LoadToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadToken.swift; sourceTree = "<group>"; };
+		D2C85D472912F1E7000AD3B0 /* GetToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken.swift; sourceTree = "<group>"; };
+		D2C85D492913C1B5000AD3B0 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		D2E27AFD290DC1D100010FCC /* API-Blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-Blog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E27B00290DC1D100010FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2E27B02290DC1D100010FCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +55,8 @@
 		D2E27B2729102DD500010FCC /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		D2E27B2929102E9700010FCC /* CreateCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommentViewController.swift; sourceTree = "<group>"; };
 		D2E27B2B29102EB900010FCC /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
+		D2E27B2F29103AB600010FCC /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		D2E27B3429104DA700010FCC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E99451DF6E645A022CE6B67B /* Pods-API-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API-Blog.release.xcconfig"; path = "Target Support Files/Pods-API-Blog/Pods-API-Blog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,11 +113,12 @@
 				D2E27B1E29102ADF00010FCC /* Wrappers */,
 				D2E27B00290DC1D100010FCC /* AppDelegate.swift */,
 				D2E27B02290DC1D100010FCC /* SceneDelegate.swift */,
-				D2E27B16290DC3A200010FCC /* Storyboards */,
-				D2E27B15290DC39100010FCC /* VCs */,
+				D2E27B0B290DC1D400010FCC /* LaunchScreen.storyboard */,
 				D2E27B14290DC38400010FCC /* Models */,
-				D2E27B0E290DC1D400010FCC /* Info.plist */,
+				D2E27B15290DC39100010FCC /* VCs */,
+				D2E27B16290DC3A200010FCC /* Storyboards */,
 				D2E27B09290DC1D400010FCC /* Assets.xcassets */,
+				D2E27B0E290DC1D400010FCC /* Info.plist */,
 				D2E27B17290DD94000010FCC /* README.md */,
 			);
 			path = "API-Blog";
@@ -110,6 +127,12 @@
 		D2E27B14290DC38400010FCC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2E27B3429104DA700010FCC /* Constants.swift */,
+				D2C85D412912DDCF000AD3B0 /* Index.swift */,
+				D2C85D3D2912D460000AD3B0 /* Article.swift */,
+				D2C85D3F2912D5E7000AD3B0 /* Comment.swift */,
+				D2C85D432912EAE0000AD3B0 /* LoadToken.swift */,
+				D2C85D472912F1E7000AD3B0 /* GetToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,7 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				D2E27B06290DC1D100010FCC /* Main.storyboard */,
-				D2E27B0B290DC1D400010FCC /* LaunchScreen.storyboard */,
+				D2E27B2F29103AB600010FCC /* ArticleTableViewCell.swift */,
+				D2C85D492913C1B5000AD3B0 /* CommentTableViewCell.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -207,7 +231,7 @@
 			files = (
 				D2E27B0D290DC1D400010FCC /* LaunchScreen.storyboard in Resources */,
 				D2E27B0A290DC1D400010FCC /* Assets.xcassets in Resources */,
-				D2E27B08290DC1D100010FCC /* Main.storyboard in Resources */,
+				D2E27B332910442400010FCC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,12 +284,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E27B3029103AB600010FCC /* ArticleTableViewCell.swift in Sources */,
+				D2E27B3529104DA700010FCC /* Constants.swift in Sources */,
 				D2E27B05290DC1D100010FCC /* LoginViewController.swift in Sources */,
 				D2E27B01290DC1D100010FCC /* AppDelegate.swift in Sources */,
 				D2E27B2C29102EB900010FCC /* EditCommentViewController.swift in Sources */,
 				D2E27B2629102DB400010FCC /* CreateViewController.swift in Sources */,
+				D2C85D4A2913C1B5000AD3B0 /* CommentTableViewCell.swift in Sources */,
 				D2E27B2429102D7000010FCC /* DetailViewController.swift in Sources */,
+				D2C85D442912EAE0000AD3B0 /* LoadToken.swift in Sources */,
 				D2E27B03290DC1D100010FCC /* SceneDelegate.swift in Sources */,
+				D2C85D422912DDCF000AD3B0 /* Index.swift in Sources */,
+				D2C85D482912F1E7000AD3B0 /* GetToken.swift in Sources */,
+				D2C85D402912D5E7000AD3B0 /* Comment.swift in Sources */,
+				D2C85D3E2912D460000AD3B0 /* Article.swift in Sources */,
 				D2E27B2229102D5400010FCC /* IndexViewController.swift in Sources */,
 				D2E27B2A29102E9700010FCC /* CreateCommentViewController.swift in Sources */,
 				D2E27B2829102DD500010FCC /* EditViewController.swift in Sources */,
