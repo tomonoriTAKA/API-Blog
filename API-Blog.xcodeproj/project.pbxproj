@@ -39,6 +39,7 @@
 		D21CFDC7291451E200D9734D /* SetupImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupImagePicker.swift; sourceTree = "<group>"; };
 		D21CFDC929145AAB00D9734D /* OkAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkAlert.swift; sourceTree = "<group>"; };
 		D21CFDCD2914CEC400D9734D /* RandomString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomString.swift; sourceTree = "<group>"; };
+		D21CFDCF2914ECE100D9734D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2C85D3D2912D460000AD3B0 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		D2C85D3F2912D5E7000AD3B0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		D2C85D412912DDCF000AD3B0 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		D2E27AF4290DC1D100010FCC = {
 			isa = PBXGroup;
 			children = (
+				D21CFDCF2914ECE100D9734D /* README.md */,
 				D2E27AFF290DC1D100010FCC /* API-Blog */,
 				D2E27AFE290DC1D100010FCC /* Products */,
 				3A4466DC9180EA3DED0DDF60 /* Pods */,
