@@ -10,7 +10,6 @@ import SwiftyJSON
 import UIKit
 import Alamofire
 import KeychainAccess
-import FirebaseStorage
 
 
 class CreateViewController: UIViewController {
@@ -18,8 +17,7 @@ class CreateViewController: UIViewController {
     let okAlert = OkAlert()
     
     
-//    var imageUrlStr = "" //画像URLの文字列を入れる変数
-    var imageUrlStr = "https://firebasestorage.googleapis.com/v0/b/hare-blog-20536.appspot.com/o/images%2Fposts%2FTCyJqpUNGTuKbVu0s0.jpg?alt=media&token=e139a55a-3161-40bd-b523-33143177b620" //画像URLの文字列を入れる変数
+    var imageUrlStr = "" //画像URLの文字列を入れる変数
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -38,7 +36,7 @@ class CreateViewController: UIViewController {
     //投稿ボタン
     @IBAction func postArticle(_ sender: Any) {
         if titleTextField.text != "" && bodyTextView.text != "" && imageView.image != nil {
-            createRequest(token: self.consts.token, imageUrlStr: imageUrlStr)
+            createRequest(token: self.consts.token, image: imageView.image!)
             okAlert.showOkAlert(title: "作成完了", message: "記事が作成されました", viewController: self)
             self.navigationController?.popViewController(animated: true)
         } else {
@@ -96,7 +94,6 @@ class CreateViewController: UIViewController {
         guard let url = URL(string: consts.baseUrl + "/api/posts") else { return }
         guard let imageData = image.jpegData(compressionQuality: 0.01) else {return}
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
-        
         let parameters: Parameters = [
             "title": titleTextField.text!,
             "body": bodyTextView.text!,
@@ -107,12 +104,15 @@ class CreateViewController: UIViewController {
         AF.upload(
             multipartFormData: { multipartFormData in
                 multipartFormData.append(imageData, withName: "image", fileName: "file.jpg")
-                multipartFormData.append(titleTextField.text?.data(using: .utf8), withName: "title")
-                multipartFormData.append(bodyTextView.text?.data(using: .utf8), withName: "body")
+                
+                guard let titleTextData = self.titleTextField.text?.data(using: .utf8) else {return}
+                multipartFormData.append(titleTextData, withName: "title")
+                
+                guard let bodyTextData = self.bodyTextView.text?.data(using: .utf8) else {return}
+                multipartFormData.append(bodyTextData, withName: "body")
             },
             to: url,
-            method: .post,
-            
+            method: .post
         )
         
 //        AF.request(
@@ -140,7 +140,7 @@ extension CreateViewController: UIImagePickerControllerDelegate, UINavigationCon
             let selectedImage = info[.originalImage] as! UIImage
             imageView.image = selectedImage
             picker.dismiss(animated: true, completion: nil)
-            createRequest(token: token, image: imageView.image!)
+            createRequest(token: consts.token, image: imageView.image!)
         }
     }
     
