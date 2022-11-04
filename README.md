@@ -2,10 +2,10 @@
 作業ブランチは`feature ブランチです。
 pod install`してから **workspace** のファイルを開いてビルド⌘+Bしてください。
 
+- 画面の向きはPortrait固定
 - CRUDつくる
 - Alamofire,KeychainAccess,Kingfisher使う
 - それからOAuth認証まわり
-- 画面の向きはPortrait固定
 <!-- - SwiftUI の preview機能 使うかも? -->
 
 

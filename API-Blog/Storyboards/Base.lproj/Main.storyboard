@@ -155,6 +155,137 @@
             </objects>
             <point key="canvasLocation" x="2248.8000000000002" y="-61.619190404797607"/>
         </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="lyM-qO-dU6">
+            <objects>
+                <viewController storyboardIdentifier="Edit" id="iYH-dF-TU6" customClass="EditViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZKT-1J-Y0v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルを編集" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeN-zA-xWG">
+                                <rect key="frame" x="10" y="0.0" width="355" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QY9-uE-ohz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本文編集" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM4-lc-IWE">
+                                <rect key="frame" x="10" y="70" width="355" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QLw-JJ-5Hq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像を変更" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0W-um-lec">
+                                <rect key="frame" x="10" y="320" width="355" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6Pb-sd-aN2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル編集" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XsN-Tb-Te0">
+                                <rect key="frame" x="10" y="26" width="355" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PuZ-ur-uIo">
+                                <rect key="frame" x="10" y="96" width="355" height="214"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="jpK-ZF-dyt"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_yoko" translatesAutoresizingMaskIntoConstraints="NO" id="vZq-zF-h9f">
+                                <rect key="frame" x="50" y="346" width="275" height="206"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vZq-zF-h9f" secondAttribute="height" multiplier="4:3" id="sdf-ch-Htr"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="t6U-NL-8mz" appends="YES" id="1an-wX-ah4"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUP-S6-W0t">
+                                <rect key="frame" x="265" y="592" width="60" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="DRO-lC-Fo3"/>
+                                    <constraint firstAttribute="height" constant="35" id="Jpm-hx-owU"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButton:" destination="iYH-dF-TU6" eventType="touchUpInside" id="b1D-7I-C6T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7d-Un-0NV">
+                                <rect key="frame" x="50" y="592" width="60" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Nav-4p-iIg"/>
+                                    <constraint firstAttribute="width" constant="60" id="NqP-D1-biW"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="iYH-dF-TU6" eventType="touchUpInside" id="e2m-uf-0PZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lfr-Cx-blr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E7d-Un-0NV" firstAttribute="top" secondItem="vZq-zF-h9f" secondAttribute="bottom" constant="40" id="0eP-IN-DXM"/>
+                            <constraint firstItem="PM4-lc-IWE" firstAttribute="trailing" secondItem="jeN-zA-xWG" secondAttribute="trailing" id="0zb-u0-3NO"/>
+                            <constraint firstItem="vZq-zF-h9f" firstAttribute="leading" secondItem="ZKT-1J-Y0v" secondAttribute="leading" constant="50" id="1Eq-Y3-2r1"/>
+                            <constraint firstItem="l0W-um-lec" firstAttribute="leading" secondItem="jeN-zA-xWG" secondAttribute="leading" id="4o1-lT-Rn8"/>
+                            <constraint firstItem="PuZ-ur-uIo" firstAttribute="trailing" secondItem="jeN-zA-xWG" secondAttribute="trailing" id="APp-1d-F8v"/>
+                            <constraint firstItem="vZq-zF-h9f" firstAttribute="top" secondItem="l0W-um-lec" secondAttribute="bottom" constant="5" id="Ah4-5D-PDg"/>
+                            <constraint firstItem="XsN-Tb-Te0" firstAttribute="leading" secondItem="jeN-zA-xWG" secondAttribute="leading" id="C1s-8K-xr6"/>
+                            <constraint firstItem="PM4-lc-IWE" firstAttribute="leading" secondItem="jeN-zA-xWG" secondAttribute="leading" id="HHw-Gr-laF"/>
+                            <constraint firstItem="XsN-Tb-Te0" firstAttribute="trailing" secondItem="jeN-zA-xWG" secondAttribute="trailing" id="IUR-tp-a32"/>
+                            <constraint firstItem="XsN-Tb-Te0" firstAttribute="top" secondItem="jeN-zA-xWG" secondAttribute="bottom" constant="5" id="Iqc-Gb-HeF"/>
+                            <constraint firstItem="bUP-S6-W0t" firstAttribute="trailing" secondItem="vZq-zF-h9f" secondAttribute="trailing" id="LMv-bH-r3h"/>
+                            <constraint firstItem="E7d-Un-0NV" firstAttribute="leading" secondItem="vZq-zF-h9f" secondAttribute="leading" id="M2i-iQ-xp7"/>
+                            <constraint firstItem="Lfr-Cx-blr" firstAttribute="bottom" secondItem="E7d-Un-0NV" secondAttribute="bottom" constant="40" id="NVl-k3-rfu"/>
+                            <constraint firstItem="PuZ-ur-uIo" firstAttribute="top" secondItem="PM4-lc-IWE" secondAttribute="bottom" constant="5" id="PD1-ju-UhS"/>
+                            <constraint firstItem="jeN-zA-xWG" firstAttribute="top" secondItem="Lfr-Cx-blr" secondAttribute="top" id="Suf-xJ-P2k"/>
+                            <constraint firstItem="PuZ-ur-uIo" firstAttribute="leading" secondItem="jeN-zA-xWG" secondAttribute="leading" id="ZlP-91-tXM"/>
+                            <constraint firstItem="jeN-zA-xWG" firstAttribute="leading" secondItem="Lfr-Cx-blr" secondAttribute="leading" constant="10" id="cgF-QE-yDl"/>
+                            <constraint firstItem="PM4-lc-IWE" firstAttribute="top" secondItem="XsN-Tb-Te0" secondAttribute="bottom" constant="10" id="d1q-pq-37J"/>
+                            <constraint firstItem="Lfr-Cx-blr" firstAttribute="trailing" secondItem="vZq-zF-h9f" secondAttribute="trailing" constant="50" id="fiy-no-3ZN"/>
+                            <constraint firstItem="Lfr-Cx-blr" firstAttribute="trailing" secondItem="jeN-zA-xWG" secondAttribute="trailing" constant="10" id="jla-te-9LQ"/>
+                            <constraint firstItem="l0W-um-lec" firstAttribute="top" secondItem="PuZ-ur-uIo" secondAttribute="bottom" constant="10" id="lK6-q7-lZc"/>
+                            <constraint firstItem="l0W-um-lec" firstAttribute="trailing" secondItem="jeN-zA-xWG" secondAttribute="trailing" id="td5-8O-TV0"/>
+                            <constraint firstItem="bUP-S6-W0t" firstAttribute="bottom" secondItem="E7d-Un-0NV" secondAttribute="bottom" id="yGE-0i-CEd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kEt-1n-0uO"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="PuZ-ur-uIo" id="Izr-uq-gbo"/>
+                        <outlet property="imageView" destination="vZq-zF-h9f" id="gi0-J7-0MI"/>
+                        <outlet property="titleTextField" destination="XsN-Tb-Te0" id="YWE-ge-3Lw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcS-RX-owj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="t6U-NL-8mz">
+                    <connections>
+                        <action selector="selectImage:" destination="iYH-dF-TU6" id="ogW-Kp-aQM"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3278" y="710"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="PQg-1k-99q">
             <objects>
@@ -247,7 +378,18 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="B8q-bT-loJ">
-                                        <barButtonItem key="rightBarButtonItem" title="Delete" image="trash" catalog="system" id="xFq-NT-Ruw"/>
+                                        <centerItemGroups>
+                                            <barButtonItemGroup customizationDisposition="fixed" id="8aF-Hh-Hq0">
+                                                <barButtonItems>
+                                                    <barButtonItem enabled="NO" title="Add Comment" id="pto-Yw-fbx"/>
+                                                    <barButtonItem enabled="NO" title="Edit or Delete" id="xFq-NT-Ruw">
+                                                        <connections>
+                                                            <action selector="editOrDeleteButton:" destination="QD8-iE-QxK" id="4f7-Jf-byo"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </barButtonItems>
+                                            </barButtonItemGroup>
+                                        </centerItemGroups>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -300,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgL-eu-KWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3392.8000000000002" y="-72.413793103448285"/>
+            <point key="canvasLocation" x="3279" y="-61"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="lYK-JJ-DIF">
@@ -414,22 +556,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1029.5999999999999" y="669.71514242878561"/>
-        </scene>
-        <!--Edit View Controller-->
-        <scene sceneID="VwA-lQ-xf5">
-            <objects>
-                <viewController storyboardIdentifier="Edit" id="xi0-xm-8g9" customClass="EditViewController" customModule="API_Blog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m9u-NX-3fP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="pgm-Le-0l6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qVe-Y5-wIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1866" y="670"/>
+            <point key="canvasLocation" x="2249" y="711"/>
         </scene>
         <!--Create Comment View Controller-->
         <scene sceneID="gFp-us-cOA">
@@ -444,7 +571,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSt-Ot-OL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4882.3999999999996" y="-585.1574212893554"/>
+            <point key="canvasLocation" x="4234" y="-193"/>
         </scene>
         <!--Edit Comment View Controller-->
         <scene sceneID="DXZ-uL-Bbl">
@@ -459,7 +586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cff-8t-6Lo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4882.3999999999996" y="182.15892053973016"/>
+            <point key="canvasLocation" x="4260" y="504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qzt-YK-zfH">
@@ -483,12 +610,14 @@
     <resources>
         <image name="no_image_yoko" width="660" height="438"/>
         <image name="pencil.line" catalog="system" width="128" height="98"/>
-        <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

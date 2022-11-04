@@ -19,7 +19,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var articleImageView: UIImageView!
-    
     @IBOutlet weak var commentTableView: UITableView!
     
 
@@ -40,10 +39,6 @@ class DetailViewController: UIViewController {
     //idから記事と一緒にコメントを取得
     func getArticleWithComments(id: Int) {
         guard let url = URL(string: consts.baseUrl + "/api/posts/\(id)") else { return }
-        print(url)
-        
-        // トークン必要、あとでheaderに含める
-//        let token = consts.token
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         
         AF.request(
@@ -52,6 +47,7 @@ class DetailViewController: UIViewController {
         ).responseDecodable(of: Article.self) { response in
             switch response.result {
             case .success(let article):
+                print("🌟success from Detail🌟")
                 self.titleLabel.text = article.title
                 self.authorLabel.text = article.userName
                 self.createdAtLabel.text = article.createdAt
@@ -64,16 +60,14 @@ class DetailViewController: UIViewController {
                 print(error)
             }
         }
-        
-        
-//        AF.request(url, headers: headers).response { response in
-//            switch response.result {
-//            case .success(let data):
-//                print(JSON(data))
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+    }
+    
+    
+    @IBAction func editOrDeleteButton(_ sender: Any) {
+        guard let articleId = articleId else { return }
+        let editVC = self.storyboard?.instantiateViewController(withIdentifier: "Edit") as! EditViewController
+        editVC.articleId = articleId
+        navigationController?.pushViewController(editVC, animated: true)
     }
     
 }

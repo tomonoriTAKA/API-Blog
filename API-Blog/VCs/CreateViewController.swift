@@ -1,24 +1,30 @@
-//
-//  CreateViewController.swift
-//  API-Blog
-//
-//  Created by 高橋知憲 on 2022/11/01.
-//
-
 import UIKit
 import Alamofire
 import KeychainAccess
 
-
 class CreateViewController: UIViewController {
     
+    private var token = ""
     let consts = Constants.shared
     let okAlert = OkAlert()
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        token = LoadToken().loadAccessToken()
+        titleTextField.delegate = self
+        
+        let viewCustomize = ViewCustomize()
+        //TextViewに枠線をつける
+        bodyTextView = viewCustomize.addBoundsTextView(textView: bodyTextView)
+        
+        //imageViewに枠線をつける
+        imageView = viewCustomize.addBoundsImageView(imageView: imageView)
+        
+        
     }
     
     //画像がタップされたとき
@@ -29,7 +35,7 @@ class CreateViewController: UIViewController {
     //投稿ボタン
     @IBAction func postArticle(_ sender: Any) {
         if titleTextField.text != "" && bodyTextView.text != "" && imageView.image != nil {
-            createRequest(token: self.consts.token, image: imageView.image!)
+            createRequest(token: token, image: imageView.image!)
         } else {
             okAlert.showOkAlert(title: "未入力欄があります", message: "全ての欄を入力してください", viewController: self)
         }
@@ -84,8 +90,25 @@ class CreateViewController: UIViewController {
     func createRequest(token: String, image: UIImage) {
         guard let url = URL(string: consts.baseUrl + "/api/posts") else { return }
         guard let imageData = image.jpegData(compressionQuality: 0.01) else {return}
-        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         
+        /*
+         //ヘッダーの書き方はどちらでもOK
+         
+         let headers: HTTPHeaders = [
+         "Accept": "application/json",
+         "Authorization": "Bearer \(token)",
+         "Content-Type": "multipart/form-data"
+         ]
+         */
+        
+        let headers: HTTPHeaders = [
+            .authorization(bearerToken: token),
+            .accept("application/json"),
+            .contentType("multipart/form-data")
+        ]
+        
+        
+        //文字情報と画像やファイルを送信するときは 「AF.upload(multipartFormData: …」 を使う
         AF.upload(
             multipartFormData: { multipartFormData in
                 multipartFormData.append(imageData, withName: "image", fileName: "file.jpg")
@@ -101,30 +124,14 @@ class CreateViewController: UIViewController {
             headers: headers
         ).response { response in
             switch response.result {
-            case .success:
-                print("success")
+            case .success(let data):
+//                print("🍏success from Create🍏", JSON(data))
                 self.createAlart(title: "投稿完了!", message: "作成した記事を投稿しました")
             case .failure(let err):
                 print(err)
                 self.okAlert.showOkAlert(title: "エラー!", message: "\(err)", viewController: self)
             }
         }
-        
-       
-        
-//        AF.request(
-//            url,
-//            method: .post,
-//            parameters: parameters,
-//            headers: headers
-//        ).response { response in
-//            switch response.result {
-//            case .success(let data):
-//                print("🌟DATA🌟:\n", JSON(data))
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
     }
     
     func createAlart(title: String, message: String) {
@@ -134,6 +141,11 @@ class CreateViewController: UIViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        titleTextField.resignFirstResponder()
+        bodyTextView.resignFirstResponder()
     }
 }
     
@@ -146,7 +158,6 @@ extension CreateViewController: UIImagePickerControllerDelegate, UINavigationCon
             let selectedImage = info[.originalImage] as! UIImage
             imageView.image = selectedImage
             picker.dismiss(animated: true, completion: nil)
-            createRequest(token: consts.token, image: imageView.image!)
         }
     }
     
@@ -154,9 +165,12 @@ extension CreateViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
 }
 
-//extension CreateViewController: UINavigationControllerDelegate {
-//
-//}
+extension CreateViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}
