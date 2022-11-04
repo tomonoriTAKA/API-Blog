@@ -12,13 +12,13 @@ struct Comment: Codable {
     let body: String
     let userId: Int
     let createdAt: String
-    let userName: String
+    let postId: Int
     
     enum CodingKeys: String, CodingKey {
         case id
         case body
         case userId = "user_id"
         case createdAt = "created_at"
-        case userName = "user_name"
+        case postId = "post_id"
     }
 }

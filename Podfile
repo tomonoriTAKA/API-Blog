@@ -10,4 +10,5 @@ target 'API-Blog' do
   pod 'Kingfisher'
   pod 'KeychainAccess'
   pod 'SwiftyJSON'
+  pod 'FirebaseStorage'
 end

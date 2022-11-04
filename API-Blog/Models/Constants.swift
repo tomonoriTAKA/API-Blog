@@ -14,25 +14,25 @@ struct Constants {
     let commentCellReuseId = "CommentCell"
     
  /* localhost */
-//    let baseUrl = "http://localhost"
-//    let oauthUrl  = "http://localhost/oauth/authorize"
-//    let clientId = 4
-//    let clientSecret = "HJrIGGNmLT0efyFw8ugWEyi7FFNx9QiADBRHNhUT"
+    let baseUrl = "http://localhost"
+    let oauthUrl  = "http://localhost/oauth/authorize"
+    let clientId = 5
+    let clientSecret = "0FW3055UO0FmFX7VSTtanSJe0zrsvhDUazrrVvtC"
     
-//    let clientSecret = "9mjkXO8LlU8rApDhC5kmFCBGFJZNT3LZliDovH2X"
+    let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTdhYjgzOGI5ZmE1MTEwNWYxNzcwN2Q1MmFhMDdiYTRkZTI4NGE0MDU5ZDgzNGE5MmFiN2IxZDJhYWU1YjFkODI1ZDAwMzJlZDQzODhlZTEiLCJpYXQiOjE2NjY3NjkwOTUuMDIxMjgzLCJuYmYiOjE2NjY3NjkwOTUuMDIxMjg1LCJleHAiOjE2OTgzMDUwOTUuMDA5NDU0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BiOVQXsO3RB33SccmM8hLPk2jnWsQI3gjiVFxlbktUXeZJIdrRBxLfrZf3fqfT9UYe6wcsBPhStzx4aSLPtb8j2QJhbowFEtTBQrrEE7Parqrm-VnLuvuL1Wm_JO9dmgRlmvmDDizSCYKs7kPxIR9nPDZ7Ywu_dC4qFaqOCeq83BCW2hhybDcWX4T13xbGtS9Nn_y0zAD7zzvm8O8nylPQYJOn8TGpFG3vyxRTPwdI1itQo8cSBkqShHSMHMxmngc9vNTmUFHUT3gdu_SvyNBw9Qg2f9opDgmWTr5VOUZB4lvaRyE8R5JWF0vsImejoT7zYy1PiQZEIL_q7dhBc6bY680HXZdsXMPa06WdEW3fpgN5UF2iIX7XfeJjOi-64K1kg5ltXdO4B2uqaD0mzQ6CpbY9lYLeHaZiQvbzliP1xVmVcfeTf7_ww5prnrmLwIVXUr_FZpYCCOPIDB6PAZd8eUE2gqsQn4882hEfd1ycmM93aFdCnyn0gUFyY06sBi0eSP_is0gWdTb08FiMipJ-cIaykw_MTWiBtd-pvGA2TR4927RPc3v_JKc6vCfChplXQD_zyVqk_B1yfnCg1HUqKmYTQCwfTypzwVDisSVv5L8UBYqm2RBIsumI26Ep9US9B4lzA92Teg2bBRj15V0ApDCy3VLyebAaskkfq1xtg"
     
-//    let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTdhYjgzOGI5ZmE1MTEwNWYxNzcwN2Q1MmFhMDdiYTRkZTI4NGE0MDU5ZDgzNGE5MmFiN2IxZDJhYWU1YjFkODI1ZDAwMzJlZDQzODhlZTEiLCJpYXQiOjE2NjY3NjkwOTUuMDIxMjgzLCJuYmYiOjE2NjY3NjkwOTUuMDIxMjg1LCJleHAiOjE2OTgzMDUwOTUuMDA5NDU0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BiOVQXsO3RB33SccmM8hLPk2jnWsQI3gjiVFxlbktUXeZJIdrRBxLfrZf3fqfT9UYe6wcsBPhStzx4aSLPtb8j2QJhbowFEtTBQrrEE7Parqrm-VnLuvuL1Wm_JO9dmgRlmvmDDizSCYKs7kPxIR9nPDZ7Ywu_dC4qFaqOCeq83BCW2hhybDcWX4T13xbGtS9Nn_y0zAD7zzvm8O8nylPQYJOn8TGpFG3vyxRTPwdI1itQo8cSBkqShHSMHMxmngc9vNTmUFHUT3gdu_SvyNBw9Qg2f9opDgmWTr5VOUZB4lvaRyE8R5JWF0vsImejoT7zYy1PiQZEIL_q7dhBc6bY680HXZdsXMPa06WdEW3fpgN5UF2iIX7XfeJjOi-64K1kg5ltXdO4B2uqaD0mzQ6CpbY9lYLeHaZiQvbzliP1xVmVcfeTf7_ww5prnrmLwIVXUr_FZpYCCOPIDB6PAZd8eUE2gqsQn4882hEfd1ycmM93aFdCnyn0gUFyY06sBi0eSP_is0gWdTb08FiMipJ-cIaykw_MTWiBtd-pvGA2TR4927RPc3v_JKc6vCfChplXQD_zyVqk_B1yfnCg1HUqKmYTQCwfTypzwVDisSVv5L8UBYqm2RBIsumI26Ep9US9B4lzA92Teg2bBRj15V0ApDCy3VLyebAaskkfq1xtg"
+    
+    //let token = "eyJpdiI6InZkdjg5K1RZOGpUTXZPdmd2anhpN0E9PSIsInZhbHVlIjoicHo0YXlta09VVm12ZmdnUDBlcFlWTkhLT2NqRndkMm5wT3pIVlpmMEgxQ0xidjBrcjdLcEdUeEtlWkx0bFlRalhDdXJBVkVmWXFJSGE1SmVINVNQclJmYlhBYUxRbnVSYlI4L3AxbFNQQTEyT3cyL2JkczVraTVTdkg0YWRkaXYiLCJtYWMiOiJkODEzZDg3YTMwODBkZjAwNjBmODczYTkzM2EzZDgzZDMzY2YxNDlkMjUyNWQ4YmJkNDZlOGEzY2VhNjcwMmQxIiwidGFnIjoiIn0%3D"
    
     
     /*
      Heroku Deployed
      */
-    
-    let baseUrl = "https://api-blog-20221026.herokuapp.com"
-    let oauthUrl  = "https://api-blog-20221026.herokuapp.com/oauth/authorize"
-    
-        let clientId = "1"
-        let clientSecret = "aXVBqa6AmcPOCZQIonDjCW4bJIeK5LO7yJR7Mp7s"
+//
+//    let baseUrl = "https://api-blog-20221026.herokuapp.com"
+//    let oauthUrl  = "https://api-blog-20221026.herokuapp.com/oauth/authorize"
+//    let clientId = "7"
+//    let clientSecret = "aXVBqa6AmcPOCZQIonDjCW4bJIeK5LO7yJR7Mp7s"
     
 //    let clientId = "1"
 //    let clientSecret = "aXVBqa6AmcPOCZQIonDjCW4bJIeK5LO7yJR7Mp7s"
@@ -42,6 +42,7 @@ struct Constants {
     let callbackUrlScheme = "api-blog-oauth"
     let service = "api-blog"
     let redirectUri = "api-blog-oauth://callback"
+    let storageUrlStr = "gs://hare-blog-20536.appspot.com/"
 }
 
 /*
@@ -77,4 +78,12 @@ struct Constants {
  CODE:
  
  def502008d9c3f48284f25669e51f77bb77eb599e2ec28c9f92393707579da290b9eb6ff8960c04616a1e3c1000ca3ee38afc6d9758d51722c8a197720e27874bfe1a166171a5d59d3d15fa2437fd4d0c3afad920288ecc84c957491263650a60afaf0cb9f05c413e24f3ca0a5863cf556b286554eb50460dff0cc36566d2c3539b45781fbf44c7126fdfd5380ab84336b573425281536452385e107dfd368c279df29d6eb4dd195513e1d33db163af4c8e80af28bed2a4dcaf893bf6b8643bb33ea7c0730278a919bf7c4736d7af3e8caa7c33a19b743373faac96955b2f278dc8ea26a2a0efa9146c45faf07c5733634981b378a10a57fa646337f8467fafa9c04b68d314f381d3f2f09340583764947c56b4e70071024656a6d97bbf29d25a59209de5095f0cc295795a8bad6d57595fafa20220cd49893090e9783e85a17
+
+
+
+
+ def50200bf9d345b7aeec62362d4126c3ecde9436b377858556f16a1c2c846b241e2dab1a339eae027d63b5cf2010a36623774c4f11cc0271fac6e2a35234851880ece75dbfa9d285d062e7915f6ffe858bcc445115bc40194edd2877b4330a988cf186cfea6f16430dd2220e69deb54e4330fd1e59ceae2e1999e8b6a019ad8f2a35fe70b6a4284866fb674647242e116808deff42754947092cc586da599db70ad307e0a9830ecf196b5f4b93e3cf07a1059086b47621fc00061b52eaf9eb6947fedd23548ed7fc4312405ad3fda923a655fe6bab8a9d54e7f98a8c2e79ffc3812b301c4360c08a5a7feb20bc2613045b1f07091f1393fdcd9852496964e43f84bde562797847da1fc7bcf941e9337be176a2af206ff654689e400f7a393b09d85f8d38ea67e2e1dcf6fbd67275f7199f88fcb437e9a20e6ca0f09e17fe5de10d934d5d8a9e0bb185894599dcf8833
+
  */
+
+
