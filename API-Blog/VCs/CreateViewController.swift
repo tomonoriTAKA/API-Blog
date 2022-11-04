@@ -5,25 +5,16 @@
 //  Created by 高橋知憲 on 2022/11/01.
 //
 
-import SwiftyJSON
-
 import UIKit
 import Alamofire
 import KeychainAccess
 
 
 class CreateViewController: UIViewController {
-    let consts = Constants.shared
-    let okAlert = OkAlert()
     
-    
-    var imageUrlStr = "" //画像URLの文字列を入れる変数
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -15,5 +15,3 @@ struct LoadToken {
         return accessToken
     }
 }
-
-

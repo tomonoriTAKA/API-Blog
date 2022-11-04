@@ -291,7 +291,6 @@
 			files = (
 				D2E27B3029103AB600010FCC /* ArticleTableViewCell.swift in Sources */,
 				D2E27B3529104DA700010FCC /* Constants.swift in Sources */,
-				D21CFDCA29145AAB00D9734D /* OkAlert.swift in Sources */,
 				D2E27B05290DC1D100010FCC /* LoginViewController.swift in Sources */,
 				D2E27B01290DC1D100010FCC /* AppDelegate.swift in Sources */,
 				D2E27B2C29102EB900010FCC /* EditCommentViewController.swift in Sources */,

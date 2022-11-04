@@ -33,12 +33,11 @@ class IndexViewController: UIViewController {
         let url = URL(string: consts.baseUrl + "/api/posts")!
         
 //        let token = LoadToken().loadAccessToken()
-        let token = consts.token
-        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+//        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
 
         AF.request(
-            url,
-            headers: headers
+            url
+            //headers: headers
         ).responseDecodable(of: Index.self) { response in
             switch response.result {
             case .success(let articles):
@@ -89,11 +88,10 @@ extension IndexViewController: UITableViewDataSource {
 }
 
 extension IndexViewController: UITableViewDelegate {
-    //タップされた記事(セル)の詳細画面へ
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = articles[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
-        detailVC.articleId = article.id
+        detailVC.article = article
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

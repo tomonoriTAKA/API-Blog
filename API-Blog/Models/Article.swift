@@ -16,7 +16,7 @@ struct Article: Codable {
     let imageUrl: String
     let comments: [Comment]?
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys:  String, CodingKey {
         case id
         case title
         case body
