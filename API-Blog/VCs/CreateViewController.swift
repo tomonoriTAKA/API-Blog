@@ -30,8 +30,6 @@ class CreateViewController: UIViewController {
     @IBAction func postArticle(_ sender: Any) {
         if titleTextField.text != "" && bodyTextView.text != "" && imageView.image != nil {
             createRequest(token: self.consts.token, image: imageView.image!)
-            okAlert.showOkAlert(title: "作成完了", message: "記事が作成されました", viewController: self)
-            self.navigationController?.popViewController(animated: true)
         } else {
             okAlert.showOkAlert(title: "未入力欄があります", message: "全ての欄を入力してください", viewController: self)
         }
@@ -99,8 +97,20 @@ class CreateViewController: UIViewController {
                 multipartFormData.append(bodyTextData, withName: "body")
             },
             to: url,
-            method: .post
-        )
+            method: .post,
+            headers: headers
+        ).response { response in
+            switch response.result {
+            case .success:
+                print("success")
+                self.createAlart(title: "投稿完了!", message: "作成した記事を投稿しました")
+            case .failure(let err):
+                print(err)
+                self.okAlert.showOkAlert(title: "エラー!", message: "\(err)", viewController: self)
+            }
+        }
+        
+       
         
 //        AF.request(
 //            url,
@@ -115,6 +125,15 @@ class CreateViewController: UIViewController {
 //                print(error)
 //            }
 //        }
+    }
+    
+    func createAlart(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
     
