@@ -87,9 +87,6 @@ class CreateViewController: UIViewController {
         guard let url = URL(string: consts.baseUrl + "/api/posts") else { return }
         guard let imageData = image.jpegData(compressionQuality: 0.01) else {return}
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
-        let parameters: Parameters = [
-            "user_id": 3 //  🌟1回具体的に入れてみる🌟
-        ]
         
         AF.upload(
             multipartFormData: { multipartFormData in

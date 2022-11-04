@@ -44,8 +44,6 @@ class LoginViewController: UIViewController {
                 return
             }
             let queryItems = URLComponents(string: successURL.absoluteString)?.queryItems
-            
-            print("🔥QUERY ITEMS🔥:\n", queryItems)
             guard let code = queryItems?.filter({ $0.name == "code" }).first?.value else { return }
             
             print("🌟CODE🌟:\n", code)
@@ -58,27 +56,26 @@ class LoginViewController: UIViewController {
     }
     // gorilla@gorilla.com
     
-    func getAccessToken(code: String!) {
+    func getAccessToken(code: String) {
         let url = URL(string: consts.baseUrl + "/oauth/token")!
-        guard let code = code else { return }
 //        let headers: HTTPHeaders = [
 //            "Content-Type": "application/x-www-form-urlencoded",
 //        ]
         let parameters: Parameters = [
-            "grant_type": "authorization_code",
+            "grant_type": "client_credentials",
             "client_id": consts.clientId,
             "client_secret": consts.clientSecret,
-            "code": code,
-            "redirect_uri": consts.callbackUrlScheme
+            "code": "\(code)",
+            "redirect_uri": consts.redirectUri
         ]
         
-        /*
+        
         //Alamofireでリクエスト
           AF.request(
             url,
             method: .post,
-            parameters: parameters//,
-//            encoding: JSONEncoding.default,
+            parameters: parameters,
+            encoding: JSONEncoding.default//,
 //            headers: headers
           ).responseDecodable(of: GetToken.self) { response in
               switch response.result {
@@ -90,23 +87,23 @@ class LoginViewController: UIViewController {
               }
           }
       }
-         */
+         
     
-    AF.request(
-            url,
-            method: .post,
-            parameters: parameters
+//    AF.request(
+//            url,
+//            method: .post,
+//            parameters: parameters,
 //            encoding: JSONEncoding.default,
 //            headers: headers
-          ).response { response in
-              switch response.result {
-              case .success:
-                  print("🍏RESPONSE🍎\n",JSON(response.data))
-              case .failure(let err):
-                  print(err)
-              }
-          }
-      }
+//          ).response { response in
+//              switch response.result {
+//              case .success:
+//                  print("🍏RESPONSE🍎\n",JSON(response.data))
+//              case .failure(let err):
+//                  print(err)
+//              }
+//          }
+//      }
     
 }
 

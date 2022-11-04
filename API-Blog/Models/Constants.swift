@@ -31,9 +31,9 @@ struct Constants {
     let baseUrl = "https://api-blog-20221026.herokuapp.com"
     let oauthUrl  = "https://api-blog-20221026.herokuapp.com/oauth/authorize"
     
-        let clientId = "1"
-        let clientSecret = "aXVBqa6AmcPOCZQIonDjCW4bJIeK5LO7yJR7Mp7s"
-    
+    let clientId = 1
+    let clientSecret = "aXVBqa6AmcPOCZQIonDjCW4bJIeK5LO7yJR7Mp7s"
+
 //    let clientId = "1"
 //    let clientSecret = "aXVBqa6AmcPOCZQIonDjCW4bJIeK5LO7yJR7Mp7s"
     

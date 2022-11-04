@@ -34,7 +34,6 @@
 /* Begin PBXFileReference section */
 		42743584500AD7967EAD0F4D /* Pods-API-Blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API-Blog.debug.xcconfig"; path = "Target Support Files/Pods-API-Blog/Pods-API-Blog.debug.xcconfig"; sourceTree = "<group>"; };
 		7BAD303EB7FD1FFBD4605C1F /* Pods_API_Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_API_Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D21CFDCF2914ECE100D9734D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D21CFDD02915009100D9734D /* OkAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkAlert.swift; sourceTree = "<group>"; };
 		D2C85D3D2912D460000AD3B0 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		D2C85D3F2912D5E7000AD3B0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -95,7 +94,7 @@
 		D2E27AF4290DC1D100010FCC = {
 			isa = PBXGroup;
 			children = (
-				D21CFDCF2914ECE100D9734D /* README.md */,
+				D2E27B17290DD94000010FCC /* README.md */,
 				D2E27AFF290DC1D100010FCC /* API-Blog */,
 				D2E27AFE290DC1D100010FCC /* Products */,
 				3A4466DC9180EA3DED0DDF60 /* Pods */,
@@ -123,7 +122,6 @@
 				D2E27B16290DC3A200010FCC /* Storyboards */,
 				D2E27B09290DC1D400010FCC /* Assets.xcassets */,
 				D2E27B0E290DC1D400010FCC /* Info.plist */,
-				D2E27B17290DD94000010FCC /* README.md */,
 			);
 			path = "API-Blog";
 			sourceTree = "<group>";
