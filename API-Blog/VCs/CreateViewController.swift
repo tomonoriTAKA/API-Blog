@@ -12,6 +12,8 @@ import KeychainAccess
 
 class CreateViewController: UIViewController {
     
+    let consts = Constants.shared
+    let okAlert = OkAlert()
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -86,9 +88,6 @@ class CreateViewController: UIViewController {
         guard let imageData = image.jpegData(compressionQuality: 0.01) else {return}
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         let parameters: Parameters = [
-            "title": titleTextField.text!,
-            "body": bodyTextView.text!,
-            "image_url": imageUrlStr,
             "user_id": 3 //  🌟1回具体的に入れてみる🌟
         ]
         
