@@ -38,10 +38,9 @@ class CreateViewController: UIViewController {
     //投稿ボタン
     @IBAction func postArticle(_ sender: Any) {
         if titleTextField.text != "" && bodyTextView.text != "" && imageView.image != nil {
-//            postImage(image: imageView.image!)
             createRequest(token: self.consts.token, imageUrlStr: imageUrlStr)
             okAlert.showOkAlert(title: "作成完了", message: "記事が作成されました", viewController: self)
-//                self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         } else {
             okAlert.showOkAlert(title: "未入力欄があります", message: "全ての欄を入力してください", viewController: self)
         }
@@ -93,13 +92,9 @@ class CreateViewController: UIViewController {
     
     
     //投稿のリクエスト
-    func createRequest(token: String, imageUrlStr: String) {
+    func createRequest(token: String, image: UIImage) {
         guard let url = URL(string: consts.baseUrl + "/api/posts") else { return }
-        if imageUrlStr == "" {
-            okAlert.showOkAlert(title: "画像のURLがありません", message: "画像のURLがないので保存できません", viewController: self)
-            return
-        }
-        
+        guard let imageData = image.jpegData(compressionQuality: 0.01) else {return}
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         
         let parameters: Parameters = [
@@ -109,43 +104,30 @@ class CreateViewController: UIViewController {
             "user_id": 3 //  🌟1回具体的に入れてみる🌟
         ]
         
-        AF.request(
-            url,
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(imageData, withName: "image", fileName: "file.jpg")
+                multipartFormData.append(titleTextField.text?.data(using: .utf8), withName: "title")
+                multipartFormData.append(bodyTextView.text?.data(using: .utf8), withName: "body")
+            },
+            to: url,
             method: .post,
-            parameters: parameters,
-            headers: headers
-        ).response { response in
-            switch response.result {
-            case .success(let data):
-                print("🌟DATA🌟:\n", JSON(data))
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    
-    func postImage(image: UIImage) {
-        var urlStr = ""
-        //ストレージサーバーのURLを取得
-        let storage = Storage.storage().reference(forURL: consts.storageUrlStr)
+            
+        )
         
-        //画像保存用フォルダの指定(無ければ作成される)
-        let imageRef = storage.child("images/posts").child("\(RandomString().generator(25)).jpg")
-        
-        //画像があったら用意した変数（データ型）にサイズ1/200でいれる
-        guard let imageData: Data = (image.jpegData(compressionQuality: 0.005)) else { return }
-        
-        //アップロード
-        let uploadTask = imageRef.putData(imageData, metadata: nil) { metadata, error in
-            imageRef.downloadURL { url, error in
-                if let url = url {
-                    self.imageUrlStr = url.absoluteString
-                }
-            }
-        }
-        
-        uploadTask.resume()
+//        AF.request(
+//            url,
+//            method: .post,
+//            parameters: parameters,
+//            headers: headers
+//        ).response { response in
+//            switch response.result {
+//            case .success(let data):
+//                print("🌟DATA🌟:\n", JSON(data))
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
 }
     
@@ -158,7 +140,7 @@ extension CreateViewController: UIImagePickerControllerDelegate, UINavigationCon
             let selectedImage = info[.originalImage] as! UIImage
             imageView.image = selectedImage
             picker.dismiss(animated: true, completion: nil)
-//            postImage(image: selectedImage)
+            createRequest(token: token, image: imageView.image!)
         }
     }
     

@@ -42,7 +42,6 @@ struct Constants {
     let callbackUrlScheme = "api-blog-oauth"
     let service = "api-blog"
     let redirectUri = "api-blog-oauth://callback"
-    let storageUrlStr = "gs://hare-blog-20536.appspot.com/"
 }
 
 /*
