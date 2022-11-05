@@ -24,10 +24,6 @@ class IndexViewController: UIViewController {
         super.viewDidLoad()
         articleTableView.dataSource = self
         articleTableView.delegate = self
-//        token = consts.token
-//        if let token = Keychain(service: consts.service)["access_token"] {
-//            print(token)
-//        }
         getUser()
     }
     
@@ -69,18 +65,6 @@ class IndexViewController: UIViewController {
                 print(err)
             }
         }
-//
-//        AF.request(
-//            url,
-//            headers: headers
-//        ).response { response in
-//            switch response.result {
-//            case .success(let data):
-////                print("🌟JSON:🌟\n", JSON(data))
-//            case .failure(let err):
-//                print(err)
-//            }
-//        }
     }
     
     //自分の情報取得(idとname)

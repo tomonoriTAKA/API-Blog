@@ -377,7 +377,7 @@
                                     <constraint firstAttribute="height" constant="44" id="zVC-AH-DTX"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="ログイン中" id="B8q-bT-loJ">
+                                    <navigationItem id="B8q-bT-loJ">
                                         <barButtonItem key="rightBarButtonItem" title="🖊or 🗑" id="e98-ck-nvf">
                                             <connections>
                                                 <action selector="editOrDeleteButton:" destination="QD8-iE-QxK" id="8OH-eA-2ix"/>

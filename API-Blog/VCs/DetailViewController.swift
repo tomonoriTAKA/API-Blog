@@ -2,18 +2,17 @@
 //  DetailViewController.swift
 //  API-Blog
 //
-//  一覧画面で記事と一緒にコメントも取ってきているので、ここでは記事取得のリクエストはしない
 
 import UIKit
 import Alamofire
 import KeychainAccess
 
 class DetailViewController: UIViewController {
+    var articleId: Int!
+    var myUser: User!
     let consts = Constants.shared
     let commentSectionName = ["コメント一覧"]
     private var token = ""
-    var articleId: Int! //Indexの画面から受け取る
-    var myUser: User!
     var comments: [Comment] = []
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -37,11 +36,6 @@ class DetailViewController: UIViewController {
         if let id = articleId {
             getArticleWithComments(id: id)
         }
-        
-        if let user = myUser {
-            
-        }
-
     }
     
     //idから記事と一緒にコメントを取得
