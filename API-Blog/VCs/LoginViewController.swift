@@ -48,12 +48,12 @@ class LoginViewController: UIViewController {
         guard let url = URL(string: consts.baseUrl + "/oauth/token") else { return }
         
         let parameters: Parameters = [
-            "grant_type": "client_credentials",
-//            "grant_type": "authorization_code",
+//            "grant_type": "client_credentials",
+            "grant_type": "authorization_code",
             "client_id": consts.clientId,
             "client_secret": consts.clientSecret,
-            "code": code,
-            "redirect_uri": consts.redirectUri
+            "code": code//,
+//            "redirect_uri": consts.redirectUri
         ]
         
         
