@@ -7,6 +7,7 @@ class CreateViewController: UIViewController {
     private var token = ""
     let consts = Constants.shared
     let okAlert = OkAlert()
+    var user: User!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -118,6 +119,11 @@ class CreateViewController: UIViewController {
                 
                 guard let bodyTextData = self.bodyTextView.text?.data(using: .utf8) else {return}
                 multipartFormData.append(bodyTextData, withName: "body")
+                
+                guard let user = self.user else { return }
+                guard let userIdData = String(user.id).data(using: .utf8) else {return}
+                multipartFormData.append(userIdData, withName: "user_id")
+                
             },
             to: url,
             method: .post,

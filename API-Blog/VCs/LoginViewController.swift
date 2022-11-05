@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 //        let token = LoadToken().loadAccessToken()
 //        print("TOKEN:",token)
-        let keychain = Keychain(service: consts.service)
-        keychain["access_token"] = nil
+//        let keychain = Keychain(service: consts.service)
+//        keychain["access_token"] = nil
     }
     
     //ログインボタンを押した時の処理
@@ -48,7 +48,6 @@ class LoginViewController: UIViewController {
         guard let url = URL(string: consts.baseUrl + "/oauth/token") else { return }
         
         let parameters: Parameters = [
-//            "grant_type": "client_credentials",
             "grant_type": "authorization_code",
             "client_id": consts.clientId,
             "client_secret": consts.clientSecret,
@@ -73,15 +72,6 @@ class LoginViewController: UIViewController {
             case .failure(let err):
                 print(err)
             }
-        }
-        
-        
-        AF.request(
-            url,
-            method: .post,
-            parameters: parameters
-        ).response { response in
-            print("RESPONSE DATA:", JSON(response.data))
         }
     }
     

@@ -15,11 +15,11 @@ class IndexViewController: UIViewController {
     
     @IBOutlet weak var articleTableView: UITableView!
     let consts = Constants.shared
-    private var token = ""
     let sectionTitle = ["投稿一覧"]
+    private var token = ""
     
     var articles: [Article] = []
-    
+    var user: User!
     override func viewDidLoad() {
         super.viewDidLoad()
         articleTableView.dataSource = self
@@ -83,7 +83,7 @@ class IndexViewController: UIViewController {
 //        }
     }
     
-    
+    //自分の情報取得(idとname)
     func getUser() {
         let url = URL(string: consts.baseUrl + "/api/user")!
         let token = LoadToken().loadAccessToken()
@@ -96,15 +96,22 @@ class IndexViewController: UIViewController {
             url,
             encoding: JSONEncoding.default,
             headers: headers
-        ).response { response in
+        ).responseDecodable(of: User.self){ response in
             switch response.result {
-            case .success(let data):
-                print("🐳From getUser🐳", JSON(data))
+            case .success(let user):
+                self.user = user
             case .failure(let err):
                 print(err)
             }
         }
         
+    }
+    
+    @IBAction func pressedCreateButtton(_ sender: Any) {
+        let createVC = self.storyboard?.instantiateViewController(withIdentifier: "Create") as! CreateViewController
+        guard let user = user else { return }
+        createVC.user = user
+        navigationController?.pushViewController(createVC, animated: true)
     }
 }
     
@@ -144,7 +151,9 @@ extension IndexViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = articles[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+        guard let user = user else { return }
         detailVC.articleId = article.id
+        detailVC.myUser = user
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

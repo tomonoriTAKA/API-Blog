@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     let commentSectionName = ["コメント一覧"]
     private var token = ""
     var articleId: Int! //Indexの画面から受け取る
+    var myUser: User!
     var comments: [Comment] = []
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -20,13 +21,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var commentTableView: UITableView!
+    @IBOutlet weak var editAndDeleteButtonState: UIBarButtonItem!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         commentTableView.delegate = self
         commentTableView.dataSource = self
         token = LoadToken().loadAccessToken()
+        editAndDeleteButtonState.isEnabled = false
+        editAndDeleteButtonState.tintColor = UIColor.clear
     }
     
     
@@ -34,6 +37,11 @@ class DetailViewController: UIViewController {
         if let id = articleId {
             getArticleWithComments(id: id)
         }
+        
+        if let user = myUser {
+            
+        }
+
     }
     
     //idから記事と一緒にコメントを取得
@@ -56,6 +64,12 @@ class DetailViewController: UIViewController {
                 guard let comments = article.comments else { return }
                 self.comments = comments
                 self.commentTableView.reloadData()
+                if let user = self.myUser {
+                    if user.name == article.userName {
+                        self.editAndDeleteButtonState.isEnabled = true
+                        self.editAndDeleteButtonState.tintColor = UIColor.systemBlue
+                    }
+                }
             case .failure(let error):
                 print(error)
             }

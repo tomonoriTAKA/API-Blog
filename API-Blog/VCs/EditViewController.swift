@@ -97,6 +97,7 @@ class EditViewController: UIViewController {
             cameraPicker.delegate = self
             self.present(cameraPicker, animated: true,completion: nil)
         }
+        
     }
     
     
@@ -105,7 +106,6 @@ class EditViewController: UIViewController {
         
         //URLに記事のIDを含めることを忘れずに!
         guard let url = URL(string: consts.baseUrl + "/api/posts/\(articleId)") else { return }
-        guard let imageData = image.jpegData(compressionQuality: 0.01) else {return}
         
         /*
          //ヘッダーの書き方はどちらでもOK
@@ -126,6 +126,8 @@ class EditViewController: UIViewController {
         //文字情報と画像やファイルを送信するときは 「AF.upload(multipartFormData: …」 を使う
         AF.upload(
             multipartFormData: { multipartFormData in
+                
+                guard let imageData = image.jpegData(compressionQuality: 0.01) else {return}
                 multipartFormData.append(imageData, withName: "image", fileName: "file.jpg")
                 
                 guard let titleTextData = self.titleTextField.text?.data(using: .utf8) else {return}
@@ -133,9 +135,14 @@ class EditViewController: UIViewController {
                 
                 guard let bodyTextData = self.bodyTextView.text?.data(using: .utf8) else {return}
                 multipartFormData.append(bodyTextData, withName: "body")
+                
+                guard let method = "patch".data(using: .utf8) else { return }
+                multipartFormData.append(method, withName: "_method")
+                
+                
             },
             to: url,
-            method: .patch, //メソッドはPATCHなので注意
+            method: .post,
             headers: headers
         ).response { response in
             switch response.result {
@@ -225,6 +232,8 @@ class EditViewController: UIViewController {
         titleTextField.resignFirstResponder()
         bodyTextView.resignFirstResponder()
     }
+    
+    
 }
 
 

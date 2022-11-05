@@ -141,9 +141,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HfX-Ms-cEZ">
-                        <barButtonItem key="rightBarButtonItem" title="Create" image="pencil.line" catalog="system" style="plain" id="VBX-RZ-1Xu">
+                        <barButtonItem key="rightBarButtonItem" title="Create" image="pencil.line" catalog="system" id="VBX-RZ-1Xu">
                             <connections>
-                                <segue destination="g4T-xB-gmQ" kind="show" id="7gJ-Kq-cL1"/>
+                                <action selector="pressedCreateButtton:" destination="Ld1-53-fEO" id="9gb-cA-JOD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -377,19 +377,12 @@
                                     <constraint firstAttribute="height" constant="44" id="zVC-AH-DTX"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem id="B8q-bT-loJ">
-                                        <centerItemGroups>
-                                            <barButtonItemGroup customizationDisposition="fixed" id="8aF-Hh-Hq0">
-                                                <barButtonItems>
-                                                    <barButtonItem enabled="NO" title="Add Comment" id="pto-Yw-fbx"/>
-                                                    <barButtonItem enabled="NO" title="Edit or Delete" id="xFq-NT-Ruw">
-                                                        <connections>
-                                                            <action selector="editOrDeleteButton:" destination="QD8-iE-QxK" id="4f7-Jf-byo"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                </barButtonItems>
-                                            </barButtonItemGroup>
-                                        </centerItemGroups>
+                                    <navigationItem title="ログイン中" id="B8q-bT-loJ">
+                                        <barButtonItem key="rightBarButtonItem" title="🖊or 🗑" id="e98-ck-nvf">
+                                            <connections>
+                                                <action selector="editOrDeleteButton:" destination="QD8-iE-QxK" id="8OH-eA-2ix"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -437,6 +430,7 @@
                         <outlet property="bodyLabel" destination="vxM-c6-z7E" id="G3t-mb-Nb1"/>
                         <outlet property="commentTableView" destination="Yfb-SM-Ilg" id="pme-Ye-nba"/>
                         <outlet property="createdAtLabel" destination="IRF-65-sCC" id="PyS-ub-4gZ"/>
+                        <outlet property="editAndDeleteButtonState" destination="e98-ck-nvf" id="2G4-U0-uTe"/>
                         <outlet property="titleLabel" destination="mh6-jR-mon" id="Yxd-Wf-VEJ"/>
                     </connections>
                 </viewController>
@@ -453,7 +447,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルを入力" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19H-Ff-L3X">
-                                <rect key="frame" x="10" y="44" width="355" height="21"/>
+                                <rect key="frame" x="10" y="0.0" width="355" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="9QM-At-kZM"/>
                                 </constraints>
@@ -462,7 +456,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本文を入力" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdF-PL-2Ig">
-                                <rect key="frame" x="10" y="114" width="355" height="21"/>
+                                <rect key="frame" x="10" y="70" width="355" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="a7L-LA-eXJ"/>
                                 </constraints>
@@ -480,12 +474,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトルを入力" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-ov-dfx">
-                                <rect key="frame" x="10" y="70" width="355" height="34"/>
+                                <rect key="frame" x="10" y="26" width="355" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Oe-ag-bla">
-                                <rect key="frame" x="10" y="140" width="355" height="170"/>
+                                <rect key="frame" x="10" y="96" width="355" height="214"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ihQ-dV-Ei7"/>
