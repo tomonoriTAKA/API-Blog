@@ -39,20 +39,27 @@ class IndexViewController: UIViewController {
     func requestIndex(){
         let url = URL(string: consts.baseUrl + "/api/posts")!
         let token = LoadToken().loadAccessToken()
-//        print("TOKEN:", token)
+        let headers: HTTPHeaders = [
+            .contentType("application/json"),
+            .accept("application/json"),
+            .authorization(bearerToken: token)
+        ]
+        /*
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Accept": "application/json",
             "Authorization": "Bearer \(token)",
         ]
+         */
         
         AF.request(
             url,
+            method: .get,
+            encoding: JSONEncoding.default,
             headers: headers
         ).responseDecodable(of: Index.self) { response in
             switch response.result {
             case .success(let articles):
-//                print(response.result)
                 print("🔥success from Index🔥")
                 if let atcls = articles.data {
                     self.articles = atcls
@@ -87,6 +94,7 @@ class IndexViewController: UIViewController {
         
         AF.request(
             url,
+            encoding: JSONEncoding.default,
             headers: headers
         ).response { response in
             switch response.result {

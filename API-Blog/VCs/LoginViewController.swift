@@ -5,6 +5,8 @@
 //  Created by 高橋知憲 on 2022/10/30.
 //
 
+import SwiftyJSON
+
 import UIKit
 import Alamofire
 import KeychainAccess
@@ -16,8 +18,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let keychain = Keychain(service: consts.service)
-//        keychain["access_token"] = nil
+//        let token = LoadToken().loadAccessToken()
+//        print("TOKEN:",token)
+        let keychain = Keychain(service: consts.service)
+        keychain["access_token"] = nil
     }
     
     //ログインボタンを押した時の処理
@@ -28,10 +32,7 @@ class LoginViewController: UIViewController {
         } else {
             guard let url = URL(string: consts.oauthUrl + "?client_id=\(consts.clientId)&response_type=code&scope=") else { return }
             session = ASWebAuthenticationSession(url: url, callbackURLScheme: consts.callbackUrlScheme) {(callback, error) in
-                guard error == nil, let successURL = callback else {
-                    print(error)
-                    return
-                }
+                guard error == nil, let successURL = callback else { return }
                 let queryItems = URLComponents(string: successURL.absoluteString)?.queryItems
                 guard let code = queryItems?.filter({ $0.name == "code" }).first?.value else { return }
                 self.getAccessToken(code: code)
@@ -48,6 +49,7 @@ class LoginViewController: UIViewController {
         
         let parameters: Parameters = [
             "grant_type": "client_credentials",
+//            "grant_type": "authorization_code",
             "client_id": consts.clientId,
             "client_secret": consts.clientSecret,
             "code": code,
@@ -71,6 +73,15 @@ class LoginViewController: UIViewController {
             case .failure(let err):
                 print(err)
             }
+        }
+        
+        
+        AF.request(
+            url,
+            method: .post,
+            parameters: parameters
+        ).response { response in
+            print("RESPONSE DATA:", JSON(response.data))
         }
     }
     
